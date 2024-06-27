@@ -17,9 +17,7 @@
         /// <returns>Interface for the detected platform</returns>
         public static IUnityNativeSharing Create()
         {
-#if UNITY_ANDROID
-            return new UnityNativeSharing(new AndroidUnityNativeSharingAdapter());
-#elif UNITY_IOS
+#if UNITY_IOS
             return new UnityNativeSharing(new IosUnityNativeSharingAdapter());
 #else
             return new UnityNativeSharing(new NullUnityNativeSharingAdapter());
